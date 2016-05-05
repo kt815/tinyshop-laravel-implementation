@@ -6,10 +6,7 @@
 <div class="checkout">
 
       <form name="checkout" class="checkout-form" action="/checkout" method="post">
-
         
-        
-
         <label>Name</label>
           <input name="name" type="text" value="{{ $name }}" class="form-control input-xlarge" autocomplete="off" required 
             @if ($name != "")
@@ -37,6 +34,12 @@
                 readonly 
             @endif
           >
+        
+        <label>Order Number</label>
+          <input name="order" type="text" value="{{ $order }}" class="form-control input-xlarge" autocomplete="off" readonly>
+
+        <label>Total Sum</label>
+          <input name="total" type="text" value="{{ $total }}" class="form-control input-xlarge" autocomplete="off" readonly>
 
         <div>
           <input type="hidden" name="_token" value="{{ csrf_token() }}">

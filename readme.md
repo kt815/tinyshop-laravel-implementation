@@ -1,5 +1,9 @@
 # Laravel PHP Framework
 
+[http://stackoverflow.com/questions/36982950/integrating-paypal-rest-api-sdk-to-laravel-5-2](http://stackoverflow.com/questions/36982950/integrating-paypal-rest-api-sdk-to-laravel-5-2)
+[l5.cart](l5.cart)
+[learninglaravel.net/integrate-paypal-sdk-into-laravel-4-laravel-5](learninglaravel.net/integrate-paypal-sdk-into-laravel-4-laravel-5)
+
 [![Build Status](https://travis-ci.org/laravel/framework.svg)](https://travis-ci.org/laravel/framework)
 [![Total Downloads](https://poser.pugx.org/laravel/framework/d/total.svg)](https://packagist.org/packages/laravel/framework)
 [![Latest Stable Version](https://poser.pugx.org/laravel/framework/v/stable.svg)](https://packagist.org/packages/laravel/framework)

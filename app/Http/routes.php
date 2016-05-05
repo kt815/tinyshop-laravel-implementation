@@ -45,10 +45,15 @@ use App\User;
 	Route::get('/cart', ['uses' => 'CartController@index']);
 
 	Route::get('/cart', ['uses' => 'CartController@index']);
-	Route::get('/checkout', ['uses' => 'CartController@checkout']);	
+
 
 	Route::post('/addtocart/{id}', ['uses' => 'CartController@addToCart']);
 	Route::post('/delfromcart/{id}', ['uses' => 'CartController@deleteItemFromCart']);
 	Route::post('/addreview', ['uses' => 'ReviewController@addReview']);
-	Route::post('/checkout', ['uses' => 'CartController@postCheckout']);
 
+	Route::get('/checkout', ['uses' => 'CheckoutPayPalController@checkout']);	
+	Route::post('/checkout', ['uses' => 'CheckoutPayPalController@postCheckout']);
+
+	Route::get('payments/status', ['uses' => 'CheckoutPayPalController@get']);
+	Route::get('payments/cancel', ['uses' => 'CheckoutPayPalController@cancel']);
+	Route::get('payments/success', ['uses' => 'CheckoutPayPalController@success']);
