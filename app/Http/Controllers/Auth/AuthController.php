@@ -48,11 +48,20 @@ class AuthController extends Controller
      */
     protected function validator(array $data)
     {
-        return Validator::make($data, [
-            'name' => 'required|max:255',
-            'email' => 'required|email|max:255|unique:users',
-            'password' => 'required|min:6|confirmed',
-        ]);
+
+        $rules = [
+            'name'      => 'required|max:255',
+            'email'     => 'required|email|max:255|unique:users',
+            'password'  => 'required|min:6|confirmed',
+            'telephone' => 'required|min:6',
+        ];
+
+        $messages = [
+            'min'       => 'Поле :attribute должно быть больше, чем :min символов',
+            
+        ];
+
+        return Validator::make($data, $rules, $messages);
     }
 
     /**
@@ -63,10 +72,35 @@ class AuthController extends Controller
      */
     protected function create(array $data)
     {
-        return User::create([
+
+        // First create user
+
+        $user = User::create([
             'name' => $data['name'],
             'email' => $data['email'],
             'password' => bcrypt($data['password']),
         ]);
+ 
+        // Then update with foreign key 'user_id'
+
+        $user->role_id = '2';
+        $user->address = $data['address'];
+        $user->telephone = $data['telephone'];
+        $user->save();
+
+
+
+        return $user;
+    }
+
+    public function getLogin()
+    {
+        return view('login');
+    }
+
+
+    public function getRegister()
+    {
+       return view('registration');
     }
 }
