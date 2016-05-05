@@ -44,14 +44,12 @@ class CheckoutPayPalController extends Controller {
     }
 
     public function checkout() {
-        if(Auth::user()){
+       
+        if(Auth::user()){            
             $name = Auth::user()->name;
             $email = Auth::user()->email;
             $telephone = Auth::user()->telephone;
             $address = Auth::user()->address;
-			$cart = new Cart();
-	        $items = $cart->getCartArray(); 
-
         }
         else {
 
@@ -61,7 +59,8 @@ class CheckoutPayPalController extends Controller {
             $address = "";
 
         }
-
+		$cart = new Cart();
+		$items = $cart->getCartArray(); 
         $order_id = $cart->getCartOrderId();
         $total = $cart->getSum($items);
 
@@ -178,11 +177,6 @@ class CheckoutPayPalController extends Controller {
 // ----------
 // ----------
 
-
-        $cart->cartDelete();
-        Session::flash('success', 'Your order has been received. Wait for call for confirmation.');
-        return redirect('cart');
-
     }    
 
 
@@ -223,12 +217,19 @@ class CheckoutPayPalController extends Controller {
 
     public function cancel()     
     {
-        kd('Something Wrong! Wrong Payment!');
+
+        Session::flash('danger', 'Paypal payment is wrong. Try it again.');
+		return redirect('cart');
     }
 
     public function success()     
     {
-        kd('Success! Payment Valid!');
+
+        $cart = new Cart();
+        $cart->cartDelete();
+        Session::flash('success', 'Your payment is success. Administrator will contact you.');
+
+        return redirect('cart');
     }
 
 }

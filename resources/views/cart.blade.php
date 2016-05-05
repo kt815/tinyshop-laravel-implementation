@@ -10,6 +10,8 @@
         
             @if(Session::has('success'))
               <div class="alert alert-success" role="alert">{{ Session::get('success') }}</div>
+            @elseif(Session::has('danger'))
+              <div class="alert alert-danger" role="alert">{{ Session::get('danger') }}</div>
             @else
               <div class="alert alert-danger" role="alert">Your shopping cart is empty!</div>
             @endif
@@ -51,6 +53,15 @@
           </table>
 
         @else
+
+
+            @if(Session::has('success'))
+              <div class="alert alert-success" role="alert">{{ Session::get('success') }}</div>
+            @elseif(Session::has('danger'))
+              <div class="alert alert-danger" role="alert">{{ Session::get('danger') }}</div>
+            @endif
+
+
           <table class="table table-hover">
             <thead>
               <tr>
