@@ -75,18 +75,17 @@
                 </td>
               </tr>
             @endforeach
+
+
             </tbody>
           </table>
         </div>
         <div class="row">
           <div class="pages">
             <nav>
-              <ul class="pagination">
-                <li class="disabled"><a aria-label="Previous" href="/adminbar/showorders/0/all"><span aria-hidden="true">«</span></a></li>
-                <li class="active"><a href="/adminbar/showorders/1/all">1</a></li>
-                <li><a href="/adminbar/showorders/2/all">2</a></li>
-                <li><a aria-label="Next" href="/adminbar/showorders/2/all"><span aria-hidden="true">»</span></a></li>
-              </ul>
+
+              {{ $orders->render() }}
+
             </nav>
           </div>
         </div>

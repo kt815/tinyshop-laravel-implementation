@@ -38,6 +38,12 @@
             @endif
           >
 
+        <label>Order Number</label>
+          <input name="order" type="text" value="{{ $order }}" class="form-control input-xlarge" autocomplete="off" readonly>
+
+        <label>Total Sum</label>
+          <input name="total" type="text" value="{{ $total }}" class="form-control input-xlarge" autocomplete="off" readonly>
+
         <div>
           <input type="hidden" name="_token" value="{{ csrf_token() }}">
           <button class="btn btn-lg btn-primary pull-right btn-adminbar" type="submit">

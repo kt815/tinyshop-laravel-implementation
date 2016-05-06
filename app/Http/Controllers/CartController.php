@@ -44,7 +44,8 @@ class CartController extends Controller {
     }
 
     public function checkout() {
-        if(Auth::user()){
+ 
+        if(Auth::user()){            
             $name = Auth::user()->name;
             $email = Auth::user()->email;
             $telephone = Auth::user()->telephone;
@@ -58,13 +59,20 @@ class CartController extends Controller {
             $address = "";
 
         }
+        $cart = new Cart();
+        $items = $cart->getCartArray(); 
+        $order_id = $cart->getCartOrderId();
+        $total = $cart->getSum($items);
 
         return view('checkout', [
             'name' => $name,
             'email' => $email,
             'telephone' => $telephone,
-            'address' => $address
-            ]);
+            'address' => $address,
+            'order' => $order_id,
+            'total' => $total
+            ]); 
+
     }
 
     public function postCheckout(Request $request) {

@@ -17,30 +17,31 @@ class AdminController extends Controller {
          $this->middleware('role.id');
     }
 
-    public function showorders($confirm = null) {
+    public function showorders(Request $request ,$confirm = null) {
 
         if ($confirm == null){
-             $orders = Order::all();
+             $orders = Order::paginate(7);
              $count_confirmed = Order::where('confirmed', 1)->count();         
-             $count_all = $orders->count();
+             $count_all = Order::all()->count();
              $count_not_confirmed = $count_all - $count_confirmed;
              $confirmed = Order::where('confirmed', 1)->get();
          }
         elseif ($confirm == 'confirmed')
         {
-            $orders = Order::where('confirmed', 1)->get();
+            $orders = Order::where('confirmed', 1)->paginate(7);
             $count_confirmed = Order::where('confirmed', 1)->count();
             $count_all = Order::all()->count();
             $count_not_confirmed = $count_all - $count_confirmed;
             $confirmed = $orders;
         }
         elseif ($confirm == 'notconfirmed') {
-            $orders = Order::where('confirmed', 0)->get();
+            $orders = Order::where('confirmed', 0)->paginate(7);
             $count_confirmed = Order::where('confirmed', 1)->count();
             $count_all = Order::all()->count();
             $count_not_confirmed = $count_all - $count_confirmed;
             $confirmed = $orders;
         }
+
 
          return view('admin_showorders', [
             'orders' => $orders,

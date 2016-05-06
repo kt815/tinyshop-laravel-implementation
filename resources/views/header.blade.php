@@ -35,7 +35,7 @@
         <li class="dropdown">
           <a href="/logreg" data-toggle="dropdown" class="dropdown-toggle"><i class="fa fa-sign-in"></i> {{ Auth::user()->email }}</a>
           <ul class="dropdown-menu">
-            <li><a href="/logout">Logut</a></li>
+            <li><a href="/logout">Logout</a></li>
           </ul>
         </li>
 
