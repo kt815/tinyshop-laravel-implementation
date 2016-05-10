@@ -1,3 +1,12 @@
+
+
+* [https://tuts.codingo.me/create-stripe-checkout-form-in-laravel](https://tuts.codingo.me/create-stripe-checkout-form-in-laravel)
+* [Laravel cart with paypal and stripe](http://stackoverflow.com/questions/35145763/laravel-cart-with-paypal-and-stripe)
+* [__Cartalyst__ packages are good for bootstraping](https://cartalyst.com/manual/stripe-billing-laravel/4.x)
+* [Cart](https://cartalyst.com/manual/cart/2.0)
+
+
+
 # Laravel PHP Framework
 
 [![Build Status](https://travis-ci.org/laravel/framework.svg)](https://travis-ci.org/laravel/framework)
