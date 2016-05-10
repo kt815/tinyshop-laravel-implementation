@@ -52,4 +52,6 @@ use App\User;
 	Route::post('/addreview', ['uses' => 'ReviewController@addReview']);
 	Route::post('/checkout', ['uses' => 'CartController@postCheckout']);
 
+	Route::post('stripe/webhooks','Laravel\Cashier\WebhookController@handleWebhook');
+
 	Route::resource('products', 'ProductController', array('only' => 'index, show'));

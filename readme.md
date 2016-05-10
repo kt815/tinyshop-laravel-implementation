@@ -1,4 +1,5 @@
 
+# Laravel PHP Framework
 
 * [https://tuts.codingo.me/create-stripe-checkout-form-in-laravel](https://tuts.codingo.me/create-stripe-checkout-form-in-laravel)
 * [Laravel cart with paypal and stripe](http://stackoverflow.com/questions/35145763/laravel-cart-with-paypal-and-stripe)
@@ -6,8 +7,12 @@
 * [Cart](https://cartalyst.com/manual/cart/2.0)
 
 
+* Hue
+* hue@gmail.com
+* 7219801923
+* Hue Street
+* 4242424242424242
 
-# Laravel PHP Framework
 
 [![Build Status](https://travis-ci.org/laravel/framework.svg)](https://travis-ci.org/laravel/framework)
 [![Total Downloads](https://poser.pugx.org/laravel/framework/d/total.svg)](https://packagist.org/packages/laravel/framework)

@@ -9,6 +9,7 @@ use Session;
 use App\Cart;
 use App\Order;
 use App\OrderedItem;
+use App\User;
 
 class CartController extends Controller {
 
@@ -76,6 +77,17 @@ class CartController extends Controller {
     }
 
     public function postCheckout(Request $request) {
+
+        $validator = \Validator::make(\Input::all(), [
+            'name' => 'required|string|min:2|max:32'
+        ]);
+
+        if ($validator->fails()) {
+            return redirect()->back()
+                ->withErrors($validator)
+                ->withInput();
+        }
+
         $cart = new Cart();
         $cart->getCartOrderId();
         $order = new Order();
@@ -103,9 +115,71 @@ class CartController extends Controller {
             $order_items->save();        
         }
 
+        $orderId = $order->order_id;
+
+        $total = 100 * $order->sum;
+        $token = $request->input('stripeToken');
+        $name = $request->input('name');
+        $email = $request->input('email');
+        $userCheck = User::where('email', $email)->first();
+        $stripeIdCheck = User::where('email', $email)->value('stripe_id');
+
+        \Stripe\Stripe::setApiKey(env('STRIPE_SECRET'));
+
+
+        if (!isset($stripeIdCheck) || !isset($userCheck)) {
+
+            // Create a new Stripe customer
+            try {
+                $customer = \Stripe\Customer::create([
+                'source' => $token,
+                'email' => $email,
+                'metadata' => [
+                    "Name" => $name
+                ]
+                ]);
+            } catch (\Stripe\Error\Card $e) {
+                return redirect()->route('order')
+                    ->withErrors($e->getMessage())
+                    ->withInput();
+            }
+        
+            $customerID = $customer->id;
+
+            if (isset($userCheck)) {
+                 $user = User::where('email', $email)->first();
+                 $user->stripe_id = $customer->id;
+                 $user->save();
+            }
+
+        } else {
+            $customerID = User::where('email', $email)->value('stripe_id');
+            $user = User::where('email', $email)->first();
+        }
+        
+        // Charging the Customer with the selected amount
+        try {
+            $charge = \Stripe\Charge::create([
+                'amount' => $total,
+                'currency' => 'usd',
+                'customer' => $customerID,
+                'metadata' => [
+                    'product_name' => $orderId
+                ]
+                ]);
+        } catch (\Stripe\Error\Card $e) {
+            return redirect()->route('order')
+                ->withErrors($e->getMessage())
+                ->withInput();
+        }
+
         $cart->cartDelete();
-        Session::flash('success', 'Your order has been received. Wait for call for confirmation.');
-        return redirect('cart');
+        return redirect('cart')
+            ->with('success', 'Your purchase was successful! Your order has been paid.');
+
+
+        // Session::flash('success', 'Your order has been received. Wait for call for confirmation.');
+        // return redirect('cart');
 
     }    
 }
