@@ -45,25 +45,30 @@ class CartController extends Controller {
     }
 
     public function checkout() {
- 
-        if(Auth::user()){            
+    
+
+        if(is_null(Auth::user())){
+            $name = "";
+            $email = "";
+            $telephone = "";
+            $address = "";
+        }
+        else {
             $name = Auth::user()->name;
             $email = Auth::user()->email;
             $telephone = Auth::user()->telephone;
             $address = Auth::user()->address;
         }
-        else {
 
-            $name = "";
-            $email = "";
-            $telephone = "";
-            $address = "";
-
+        if (is_null(Cookie::get('cart'))) {
+            return redirect('cart');
         }
-        $cart = new Cart();
-        $items = $cart->getCartArray(); 
-        $order_id = $cart->getCartOrderId();
-        $total = $cart->getSum($items);
+        else {
+            $cart = new Cart();
+            $items = $cart->getCartArray(); 
+            $order_id = $cart->getCartOrderId();
+            $total = $cart->getSum($items);
+        }
 
         return view('checkout', [
             'name' => $name,

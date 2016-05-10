@@ -5,6 +5,7 @@
 * [Laravel cart with paypal and stripe](http://stackoverflow.com/questions/35145763/laravel-cart-with-paypal-and-stripe)
 * [__Cartalyst__ packages are good for bootstraping](https://cartalyst.com/manual/stripe-billing-laravel/4.x)
 * [Cart](https://cartalyst.com/manual/cart/2.0)
+* [http://stripe.checkout/order - in my local Environment](http://stripe.checkout/order)
 
 
 * Hue

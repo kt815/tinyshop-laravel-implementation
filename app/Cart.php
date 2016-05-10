@@ -43,6 +43,7 @@ class Cart
 	  }
 
 	public function getCartArray() {
+		
 		$this->_cart = Cookie::get('cart');
 		$cart = $this->unserializeCart();
 		$order_id = $cart['order_id'];
