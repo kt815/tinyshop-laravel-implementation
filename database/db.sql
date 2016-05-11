@@ -51,7 +51,7 @@ CREATE TABLE IF NOT EXISTS `catalog` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=51 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
--- Dumping data for table laravel5_cart.catalog: ~37 rows (approximately)
+-- Dumping data for table laravel5_cart.catalog: ~40 rows (approximately)
 /*!40000 ALTER TABLE `catalog` DISABLE KEYS */;
 INSERT INTO `catalog` (`id`, `category_id`, `brand_id`, `model`, `characteristics`, `description`, `photo`, `price`, `instock`) VALUES
 	(4, 1, 6, 'Lumia 930', '    System: Windows Phone 8.1\r\n    Processor: 2.2 GHz / Quad Core / Qualcomm Snapdragon™ 800\r\n    Memory: Internal: 32 GB / RAM: 2 GB\r\n    Display: 5.0&#34; / ClearBlack, OLED / Resolution: 1920 x 1080 pixels / 441 ppi\r\n    Camera: 20 Mpixels / Flash: Dual LED / Front: 1.2 Mpixels / Video: 1080p full HD / 6-lens optics, Backside-illuminated image sensor, High resolution zoom 2x, Optical image stabilization, PureView\r\n    Network: 4G: LTE / 3G: 850/900/1900/2100 MHz / GSM: 850/900/1800/1900 MHz\r\n    nanoSIM\r\n    Wireless: Bluetooth: 4.0 / NFC, Qi Wireless charging / Wifi: IEEE 802.11 a/ac/b/g/n\r\n    Connection: Jack 3.5 mm / micro USB\r\n    GPS: AGPS & GLONASS\r\n    Sensors: Accelerometer, Ambient Light Sensor, Gyroscope, Magnetometer, Proximity sensor\r\n    Battery: 2430 mAh\r\n    Weight: 167 grams\r\n    Dimensions: 137 x 71 x 9.8 mm 				', 'ONE WINDOWS EXPERIENCE\r\nThe Nokie Lumia 930 comes with the latest Windows Phone experience, so the things that matter most are always with you whether you&#39;re on your smartphone, Xbox or PC. Exclusive LiveTiles keep you up to speed with what&#39;s happening in your world, while new features like customisable background images for your home screen make Windows Phone 8.1 more personal than ever.\r\n\r\nA FORMIDABLE CAMERA, OR COURSE\r\nWith a 20MP PureView Camera and four directional microphones with Surround-Sound, you can capture High-quality photos and immersive video with sound that&#39;s more true-to-life than ever before. Use the Nokia Camera app to take full creative control of your photos, then unleash your creations upon the world through Nokia Storyteller, Instagram and your favorite social networks.				', 'nokia-lumia-930.jpg', 399.99, 30),
@@ -129,7 +129,7 @@ CREATE TABLE IF NOT EXISTS `items` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=52 DEFAULT CHARSET=utf8;
 
--- Dumping data for table laravel5_cart.items: ~50 rows (approximately)
+-- Dumping data for table laravel5_cart.items: ~41 rows (approximately)
 /*!40000 ALTER TABLE `items` DISABLE KEYS */;
 INSERT INTO `items` (`id`, `category_id`, `brand_id`, `model`, `characteristics`, `description`, `price`, `instock`, `created_at`, `updated_at`, `photo`) VALUES
 	(4, 1, 6, 'Lumia 930', '    System: Windows Phone 8.1\r\n    Processor: 2.2 GHz / Quad Core / Qualcomm Snapdragon™ 800\r\n    Memory: Internal: 32 GB / RAM: 2 GB\r\n    Display: 5.0&#34; / ClearBlack, OLED / Resolution: 1920 x 1080 pixels / 441 ppi\r\n    Camera: 20 Mpixels / Flash: Dual LED / Front: 1.2 Mpixels / Video: 1080p full HD / 6-lens optics, Backside-illuminated image sensor, High resolution zoom 2x, Optical image stabilization, PureView\r\n    Network: 4G: LTE / 3G: 850/900/1900/2100 MHz / GSM: 850/900/1800/1900 MHz\r\n    nanoSIM\r\n    Wireless: Bluetooth: 4.0 / NFC, Qi Wireless charging / Wifi: IEEE 802.11 a/ac/b/g/n\r\n    Connection: Jack 3.5 mm / micro USB\r\n    GPS: AGPS & GLONASS\r\n    Sensors: Accelerometer, Ambient Light Sensor, Gyroscope, Magnetometer, Proximity sensor\r\n    Battery: 2430 mAh\r\n    Weight: 167 grams\r\n    Dimensions: 137 x 71 x 9.8 mm 				', 'ONE WINDOWS EXPERIENCE\r\nThe Nokie Lumia 930 comes with the latest Windows Phone experience, so the things that matter most are always with you whether you&#39;re on your smartphone, Xbox or PC. Exclusive LiveTiles keep you up to speed with what&#39;s happening in your world, while new features like customisable background images for your home screen make Windows Phone 8.1 more personal than ever.\r\n\r\nA FORMIDABLE CAMERA, OR COURSE\r\nWith a 20MP PureView Camera and four directional microphones with Surround-Sound, you can capture High-quality photos and immersive video with sound that&#39;s more true-to-life than ever before. Use the Nokia Camera app to take full creative control of your photos, then unleash your creations upon the world through Nokia Storyteller, Instagram and your favorite social networks.				', 399.99, 30, '0000-00-00 00:00:00', NULL, 'nokia-lumia-930.jpg'),
@@ -200,9 +200,9 @@ CREATE TABLE IF NOT EXISTS `ordered_items` (
   `old_price` float NOT NULL,
   `quantity` int(11) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=177 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=178 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
--- Dumping data for table laravel5_cart.ordered_items: ~113 rows (approximately)
+-- Dumping data for table laravel5_cart.ordered_items: ~114 rows (approximately)
 /*!40000 ALTER TABLE `ordered_items` DISABLE KEYS */;
 INSERT INTO `ordered_items` (`id`, `order_id`, `item_id`, `old_price`, `quantity`) VALUES
 	(54, '54e648a3385e7', 12, 89.99, 2),
@@ -317,7 +317,8 @@ INSERT INTO `ordered_items` (`id`, `order_id`, `item_id`, `old_price`, `quantity
 	(173, '5731e9e284ed0', 36, 389.99, 1),
 	(174, '5731e9e284ed0', 36, 389.99, 1),
 	(175, '5731e9e284ed0', 36, 389.99, 1),
-	(176, '573200a7ceba7', 27, 229.99, 1);
+	(176, '573200a7ceba7', 27, 229.99, 1),
+	(177, '573348e82a2d4', 10, 289.99, 1);
 /*!40000 ALTER TABLE `ordered_items` ENABLE KEYS */;
 
 
@@ -335,9 +336,9 @@ CREATE TABLE IF NOT EXISTS `orders` (
   `created_at` datetime DEFAULT NULL,
   `updated_at` datetime DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=108 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=109 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
--- Dumping data for table laravel5_cart.orders: ~70 rows (approximately)
+-- Dumping data for table laravel5_cart.orders: ~71 rows (approximately)
 /*!40000 ALTER TABLE `orders` DISABLE KEYS */;
 INSERT INTO `orders` (`id`, `confirmed`, `order_id`, `user_id`, `name`, `email`, `telephone`, `address`, `sum`, `created_at`, `updated_at`) VALUES
 	(24, 1, '54e650a9bfeeb', 3, 'Mike Kotter', 'mike32@gmail.com', '+4324343', 'Washington Garim place 23     ', 305.97, '2016-04-28 20:15:57', '2016-05-10 15:39:10'),
@@ -409,7 +410,8 @@ INSERT INTO `orders` (`id`, `confirmed`, `order_id`, `user_id`, `name`, `email`,
 	(104, 0, '5731e9e284ed0', 0, 'Hue', 'hu@gmail.com', '10910902912', 'Hu st.', 389.99, '2016-05-10 14:28:49', '2016-05-10 14:28:49'),
 	(105, 0, '5731e9e284ed0', 0, 'Hue', 'hu@gmail.com', '10910902912', 'Hu st.', 389.99, '2016-05-10 14:29:03', '2016-05-10 14:29:03'),
 	(106, 0, '5731e9e284ed0', 0, 'Hue ', 'hu@gmail.com', '93813212323', 'Hu St.', 389.99, '2016-05-10 14:29:28', '2016-05-10 14:29:28'),
-	(107, 0, '573200a7ceba7', 0, 'hue', 'hue@gmail.com', '7219801923', 'Hue Street', 229.99, '2016-05-10 15:40:50', '2016-05-10 15:40:50');
+	(107, 0, '573200a7ceba7', 0, 'hue', 'hue@gmail.com', '7219801923', 'Hue Street', 229.99, '2016-05-10 15:40:50', '2016-05-10 15:40:50'),
+	(108, 0, '573348e82a2d4', 0, 'Hi', 'hi@gmai.com', '98212212', 'Hie st.', 289.99, '2016-05-11 15:00:20', '2016-05-11 15:00:20');
 /*!40000 ALTER TABLE `orders` ENABLE KEYS */;
 
 
@@ -567,36 +569,10 @@ CREATE TABLE IF NOT EXISTS `users` (
 /*!40000 ALTER TABLE `users` DISABLE KEYS */;
 INSERT INTO `users` (`id`, `name`, `role_id`, `email`, `password`, `telephone`, `address`, `remember_token`, `created_at`, `updated_at`, `stripe_id`, `card_brand`, `card_last_four`, `trial_ends_at`) VALUES
 	(1, 'Segey', 2, 'sergey@mail.ru', '$2y$10$E4M3ocHGMAaBoZ9952HUdOntk4zssqSNUK79RZlSit15PWW1Dqjqi', '+4 324343', 'Washington Garim place 23  ', 'DY6JUSn7Mplvz0VhdsnGPwB87IG3fpWWNKU0Jnk6ft7cSsQ3NIcMIatm331H', '2016-04-26 07:05:44', '2016-04-26 10:48:24', NULL, NULL, NULL, NULL),
-	(9, 'Fooe', 2, 'fooe@gmail.com', '$2y$10$NczuDdSum2Srj4kKErjpMu7LIu0xrJN7AXnLBysaCn/7dkawc.NoG', '+0 192310', 'Gramshire 21', 'Qj0M5rPGnIuBcmKHL3c9oSiY50jp5pcUdVy1F4IlMUftIctcRtFxojhMq8uE', '2016-04-26 12:16:18', '2016-04-26 12:18:54', NULL, NULL, NULL, NULL),
+	(9, 'Foo', 2, 'foo@gmail.com', '$2y$10$Klp1yI8rEpZ8j0NgYD7yJ.jTFQuhmLI.6YjjTf3vnbNdnFKLTDxJy', '+0 192310', 'Gramshire 21', 'Qj0M5rPGnIuBcmKHL3c9oSiY50jp5pcUdVy1F4IlMUftIctcRtFxojhMq8uE', '2016-04-26 12:16:18', '2016-04-26 12:18:54', NULL, NULL, NULL, NULL),
 	(14, 'Hue', 2, 'hue@gmail.com', '$2y$10$5uDPJqosn73Ngj/M48SGpuaDtpaZBUfw6ljkAqf8/1rB6hy6tkS2q', '0910219320928', 'st. Sant Luise, 90', 'vyOqzdOvOi4o3brbtgzHLY2g25uyMCDx0v3dSuX9tXCqR9BDNXLciH8F3BOr', '2016-04-26 14:36:28', '2016-05-10 11:43:46', 'cus_8QQ7014OEsjAKH', NULL, NULL, NULL),
-	(16, 'Yank', 1, 'thatguy@kevinyank.com', '$2y$10$Klp1yI8rEpZ8j0NgYD7yJ.jTFQuhmLI.6YjjTf3vnbNdnFKLTDxJy', '+0921928', 'London, Sq-16', 'krRvFFHuK5SQWYHmYw3Kwm5ttBNxjjTf0mumt9R8ly5msoDmLu13f4qmOzMw', '2016-04-26 15:48:26', '2016-05-10 15:39:15', NULL, NULL, NULL, NULL),
-	(17, 'Joe', 2, 'joe@gmail.com', '$2y$10$00YPNByYrfF.sBNJL5N/y.gR8cdLDVVZc6/F33GOpPGIeFmWgkHG2', '+0909287', 'st. New York Street, 91', '3JMpAJ7I9wr0y4yeWExMqUPa0xrhs2cQS8yIYMn5LIIz0ZrjmiPSroEjTCxT', '2016-04-28 16:12:46', '2016-04-28 16:13:21', NULL, NULL, NULL, NULL);
+	(17, 'Joe', 1, 'joe@gmail.com', '$2y$10$Klp1yI8rEpZ8j0NgYD7yJ.jTFQuhmLI.6YjjTf3vnbNdnFKLTDxJy', '+0909287', 'st. New York Street, 91', '0FlrBcHXA6wWGkooLRUQPt04cDnKlQNj3mZRwE77UEkeZqX0YxmQa1TOZYlR', '2016-04-28 16:12:46', '2016-05-11 15:05:36', NULL, NULL, NULL, NULL);
 /*!40000 ALTER TABLE `users` ENABLE KEYS */;
-
-
--- Dumping structure for table laravel5_cart.users_old
-CREATE TABLE IF NOT EXISTS `users_old` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `name` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
-  `email` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
-  `telephone` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
-  `address` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
-  `verified` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
-  `hash` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
-  `salt` text COLLATE utf8_unicode_ci NOT NULL,
-  `remember_token` varchar(100) COLLATE utf8_unicode_ci NOT NULL,
-  `created_at` timestamp NULL DEFAULT NULL,
-  `updated_at` timestamp NULL DEFAULT NULL,
-  `iterations` int(11) NOT NULL,
-  `role` varchar(24) COLLATE utf8_unicode_ci NOT NULL,
-  `password` varchar(50) COLLATE utf8_unicode_ci DEFAULT NULL,
-  PRIMARY KEY (`id`),
-  UNIQUE KEY `id` (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
-
--- Dumping data for table laravel5_cart.users_old: ~0 rows (approximately)
-/*!40000 ALTER TABLE `users_old` DISABLE KEYS */;
-/*!40000 ALTER TABLE `users_old` ENABLE KEYS */;
 /*!40101 SET SQL_MODE=IFNULL(@OLD_SQL_MODE, '') */;
 /*!40014 SET FOREIGN_KEY_CHECKS=IF(@OLD_FOREIGN_KEY_CHECKS IS NULL, 1, @OLD_FOREIGN_KEY_CHECKS) */;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
