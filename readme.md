@@ -18,10 +18,10 @@ Branches:
 
 Login as Administrator
 ------------------------
-Login: joe@gmail.com
-Password: 111111
+- Login: joe@gmail.com
+- Password: 111111
 
 Login as User
 ------------------------
-Login: foo@gmail.com
-Password: 111111
+- Login: foo@gmail.com
+- Password: 111111
