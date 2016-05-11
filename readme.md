@@ -1,3 +1,12 @@
+Here is Inspiration https://github.com/sevnekish/tinyshop 
+But in this case on Laravel 5.2 Framework
+
+Branches:
+* master
+* paypalpayment
+* stripe_payment
+
+
 # Laravel PHP Framework
 
 [![Build Status](https://travis-ci.org/laravel/framework.svg)](https://travis-ci.org/laravel/framework)
