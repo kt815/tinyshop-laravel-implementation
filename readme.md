@@ -3,10 +3,14 @@ Here is inspiration __github.com/sevnekish/tinyshop__ [online pleced](http://tin
 But in this case on Laravel 5.2 Framework, with Bootsrap 3.
 
 Branches:
+------
 
 * master
 * paypalpayment
 * stripe_payment
+
+Setup
+------
 
 - git clone https://kt815@bitbucket.org/kt815/laravel5.cart.git .
 - Set .env file (APP_URL)
