@@ -89,7 +89,7 @@ class AdminController extends Controller {
             Session::flash('success', 'Order has been removed successfully.');            
             $order = Order::where('order_id', $order_id)->delete();
             $order_items = OrderedItem::where('order_id', $order_id)->delete();            
-            return redirect($_SERVER['HTTP_REFERER']);    
+            return redirect('adminbar/showorders');    
     }
 
     public function adduser() {
