@@ -1,4 +1,4 @@
-Here is inspiration __github.com/sevnekish/tinyshop__ [online pleced](http://tinyshop.byethost17.com/). 
+Here is inspiration __github.com/sevnekish/tinyshop__ [online placed](http://tinyshop.byethost17.com/). 
 
 But in this case on Laravel 5.2 Framework, with Bootsrap 3.
 
