@@ -12,7 +12,7 @@ Branches:
 Setup
 ------
 
-- git clone https://kt815@bitbucket.org/kt815/laravel5.cart.git .
+- git clone https://github.com/kt815/tinyshop-laravel-implementation.git .
 - Set .env file (APP_URL)
 - Set .env file (DB_USERNAME, DB_PASSWORD)
 - import database from ../database/db.sql (db name laravel5_cart)
